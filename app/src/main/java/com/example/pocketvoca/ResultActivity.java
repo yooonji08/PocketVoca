@@ -98,7 +98,7 @@ public class ResultActivity extends TabActivity {
 
                 // 만약 틀린 단어라면
                 if (k < inCorrectArrayList.size()) {
-                    if (studyArrayList.get(i).meaning.equals(inCorrectArrayList.get(k).word)){
+                    if (studyArrayList.get(i).word.equals(inCorrectArrayList.get(k).word)){
 
                         LinearLayout newLayout = returnResult("black_40", inCorrectArrayList.get(k).word, inCorrectArrayList.get(k).meaning);
 
