@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -55,23 +54,12 @@
                 android:background="@color/purple_100"
                 android:src="@drawable/ic_doubleup"/>
 
-            <!--<Button
-                android:id="@+id/flashcard_handle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/shape_flashcard_btn_box"
-                android:backgroundTint="@color/purple_100"
-                android:text="생각이 안나면 끌어 올려 답을 확인하세요!"
-                android:textColor="@color/white"
-                android:fontFamily="@font/notosans_regular"
-                android:textSize="14sp" />-->
-
             <TextView
                 android:id="@+id/flashcard_meaning_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/notosans_medium"
-                android:textColor="@color/black_100"
+                android:fontFamily="@font/notosans_bold"
+                android:textColor="@color/white"
                 android:textSize="16sp"
                 android:text="뜻"
                 android:gravity="center"

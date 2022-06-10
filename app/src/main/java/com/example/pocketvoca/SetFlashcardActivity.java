@@ -40,14 +40,6 @@ public class SetFlashcardActivity extends AppCompatActivity {
         Intent intent = getIntent();
         ArrayList<Word> wordArrayList = (ArrayList<Word>) intent.getSerializableExtra("words");
 
-        int s = wordArrayList.size();
-        Log.d("리스트 사이즈: ", Integer.toString(s));
-        for (int i = 0; i < wordArrayList.size(); i++) {
-            Log.d("세팅화면 리스트 word: ", wordArrayList.get(i).word);
-            Log.d("세팅화면 리스트 meaning: ", wordArrayList.get(i).meaning);
-        }
-
-
         // 닫기 버튼을 클릭했을 경우
         // 현재 액티비티 종료
         sub_close_iv.setOnClickListener(new View.OnClickListener() {
@@ -75,10 +67,10 @@ public class SetFlashcardActivity extends AppCompatActivity {
                         finish();
                         startActivity(intent);
                     }
-                    else if (wordNum <= 0 || wordNum > wordArrayList.size()) { // 문제 수 값이 0이하 이거나 arrylist값보다 크다면
+                    else if (wordNum <= 0 || wordNum > wordArrayList.size()) { // 문제 수 값이 0이하 이거나 arryList값보다 크다면
                         Toast.makeText(getApplicationContext(), "문제 수를 다시 입력해주세요", Toast.LENGTH_SHORT).show();
                     }
-                } catch (Exception exception) { // edittext에 숫자가 아닌 다른 값을 입력했다면
+                } catch (Exception exception) { // editText에 숫자가 아닌 다른 값을 입력했다면
                     Toast.makeText(getApplicationContext(), "올바른 값을 입력해주세요", Toast.LENGTH_SHORT).show();
                 }
             }

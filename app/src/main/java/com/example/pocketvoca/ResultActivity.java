@@ -2,7 +2,6 @@ package com.example.pocketvoca;
 
 import android.app.TabActivity;
 import android.content.Intent;
-import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -29,7 +28,6 @@ public class ResultActivity extends TabActivity {
     ArrayList<Word> studyArrayList = new ArrayList<Word>(); // 학습한 단어 리스트
     ArrayList<Word> inCorrectArrayList = new ArrayList<Word>(); // 틀린 단어 리스트
     ArrayList<Word> correctArrayList = new ArrayList<Word>(); // 맞은 단어 리스트
-    //ArrayList<Word> wordArrayList = new ArrayList<Word>(); // 총 단어 리스트
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +44,6 @@ public class ResultActivity extends TabActivity {
 
         // flashcard 액티비티에서 보낸 데이터 받기
         Intent intent = getIntent();
-        //wordArrayList = (ArrayList<Word>) intent.getSerializableExtra("totalWords");
         studyArrayList = (ArrayList<Word>) intent.getSerializableExtra("studyWords");
         correctArrayList = (ArrayList<Word>) intent.getSerializableExtra("correctWords");
         inCorrectArrayList = (ArrayList<Word>) intent.getSerializableExtra("inCorrectWords");
@@ -84,48 +81,28 @@ public class ResultActivity extends TabActivity {
             }
         });
 
-        Log.d("studyA ", Integer.toString(studyArrayList.size()));
         // 모든 단어 레이아웃에 동적 레이아웃 추가
         for (int i = 0; i < studyArrayList.size(); i++) {
             for (int k = 0; k < studyArrayList.size(); k++) {
 
-                /*
-                // 객체 연결
-                ImageView circleIV = newLayout.findViewById(R.id.item_resultbox_circle_iv);
-                TextView wordTV = newLayout.findViewById(R.id.item_resultbox_word_tv);
-                TextView meaningTV = newLayout.findViewById(R.id.item_resultbox_meaning_tv);*/
-
                 // 만약 맞춘 단어라면
                 if (k < correctArrayList.size()) {
                     if (studyArrayList.get(i).word.equals(correctArrayList.get(k).word)) {
-                        // 객체에 값 넣기
-                    /*circleIV.setColorFilter(R.color.purple_60);
-                    wordTV.setText(correctArrayList.get(i).word);
-                    meaningTV.setText(inCorrectArrayList.get(i).meaning);*/
 
-                        // 객체 생성 및 값 넣기
-                        //Result result = returnResult(R.color.purple_60, correctArrayList.get(i).word, correctArrayList.get(i).meaning);
                         LinearLayout newLayout = returnResult("purple_60", correctArrayList.get(k).word, correctArrayList.get(k).meaning);
 
                         result_allWord_LinearLayout.addView(newLayout);
-                        Log.i("correct! ", correctArrayList.get(k).word);
                         break;
                     }
                 }
+
                 // 만약 틀린 단어라면
                 if (k < inCorrectArrayList.size()) {
                     if (studyArrayList.get(i).meaning.equals(inCorrectArrayList.get(k).word)){
-                    /*// 객체에 값 넣기
-                    circleIV.setColorFilter(R.color.black_40);
-                    wordTV.setText(inCorrectArrayList.get(i).word);
-                    meaningTV.setText(inCorrectArrayList.get(i).meaning);*/
 
-                        // 객체 생성 및 값 넣기
-                        //Result result = returnResult(R.color.black_40, inCorrectArrayList.get(i).word, inCorrectArrayList.get(i).meaning);
                         LinearLayout newLayout = returnResult("black_40", inCorrectArrayList.get(k).word, inCorrectArrayList.get(k).meaning);
 
                         result_allWord_LinearLayout.addView(newLayout);
-                        Log.i("incorrect! ", inCorrectArrayList.get(k).word);
                         break;
                     }
                 }
@@ -134,19 +111,7 @@ public class ResultActivity extends TabActivity {
 
         // 정답 레이아웃에 동적 레이아웃 추가
         for (int i = 0; i < correctArrayList.size(); i++) {
-            /*
-            // 객체 연결
-            ImageView circleIV = newLayout.findViewById(R.id.item_resultbox_circle_iv);
-            TextView wordTV = newLayout.findViewById(R.id.item_resultbox_word_tv);
-            TextView meaningTV = newLayout.findViewById(R.id.item_resultbox_meaning_tv);
 
-            // 객체에 값 넣기
-            circleIV.setColorFilter(R.color.purple_60);
-            wordTV.setText(correctArrayList.get(i).word);
-            meaningTV.setText(correctArrayList.get(i).meaning); */
-
-            // 객체 생성 및 값 넣기
-            //Result result = returnResult(R.color.purple_60, correctArrayList.get(i).word, correctArrayList.get(i).meaning);
             LinearLayout newLayout = returnResult("purple_60", correctArrayList.get(i).word, correctArrayList.get(i).meaning);
 
             // 레이아웃 추가
@@ -156,19 +121,6 @@ public class ResultActivity extends TabActivity {
         // 오답 레이아웃에 동적 레이아웃 추가
         for (int i = 0; i < inCorrectArrayList.size(); i++) {
 
-            /*
-            // 객체 연결
-            ImageView circleIV = newLayout.findViewById(R.id.item_resultbox_circle_iv);
-            TextView wordTV = newLayout.findViewById(R.id.item_resultbox_word_tv);
-            TextView meaningTV = newLayout.findViewById(R.id.item_resultbox_meaning_tv);
-
-            // 객체에 값 넣기
-            circleIV.setColorFilter(R.color.black_40);
-            wordTV.setText(inCorrectArrayList.get(i).word);
-            meaningTV.setText(inCorrectArrayList.get(i).meaning); */
-
-            // 객체 생성 및 값 넣기
-            // Result result = returnResult(R.color.black_40, inCorrectArrayList.get(i).word, inCorrectArrayList.get(i).meaning);
             LinearLayout newLayout = returnResult("black_40", inCorrectArrayList.get(i).word, inCorrectArrayList.get(i).meaning);
 
             // 레이아웃 추가

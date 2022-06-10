@@ -34,7 +34,6 @@ public class MainActivity extends AppCompatActivity {
     Button dialog_delete_btn, dialog_no_btn; // 삭제, 취소 버튼
 
     LinearLayout main_ingWordBox_LinearLayout; // 레이아웃
-    int layoutCount = 0; // 레이아웃 개수, 레이아웃 아이디
 
     ArrayList<Word> wordArray = new ArrayList<Word>(); // <단어, 뜻> 직렬화된 리스트
 
@@ -55,7 +54,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-        Log.i("테스트 ", "onStart()");
         // + 아이콘을 클릭한 경우, 단어 추가 대화상자 띄우기기
         home_add_iv.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,10 +66,6 @@ public class MainActivity extends AppCompatActivity {
         home_flashcard_iv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                for (int i = 0; i < wordArray.size(); i++) {
-                    Log.d("메인화면 리스트 word: ", wordArray.get(i).word);
-                    Log.d("메인화면 리스트 meaning: ", wordArray.get(i).meaning);
-                }
                 Intent intent = new Intent(getApplicationContext(), SetFlashcardActivity.class);
                 intent.putExtra("words", wordArray);
                 startActivity(intent);
@@ -150,7 +144,6 @@ public class MainActivity extends AppCompatActivity {
         ConstraintLayout newLayout; // 레이아웃 변수
         LayoutInflater inflater = getLayoutInflater();
         newLayout = (ConstraintLayout) inflater.inflate(R.layout.item_wordbox, null); // 레이아웃 연결
-        newLayout.setId(layoutCount);
 
         // 객체 연결
         TextView wordTV = newLayout.findViewById(R.id.item_wordbox_word_tv);
@@ -220,6 +213,5 @@ public class MainActivity extends AppCompatActivity {
 
         // 리니어 레이아웃에 동적 레이아웃 추가
         main_ingWordBox_LinearLayout.addView(newLayout);
-        layoutCount++; // 레이아웃 아이디(개수) 증가
     }
 }
