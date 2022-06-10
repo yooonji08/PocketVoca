@@ -10,6 +10,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PocketVoca">
         <activity
+            android:name=".ResultActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ReviewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FlashCardActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SetFlashcardActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 홈 화면의 단어 & 대화상자의 edittext 박스 -->
+    <corners android:radius="16dp" />
+    <solid android:color="@color/black_20" />
+</shape>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".FlashCardActivity">
+
+    <include layout="@layout/sub_toolbar" />
+
+    <TextView
+        android:id="@+id/flashcard_num_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1 / 10"
+        android:fontFamily="@font/notosans_medium"
+        android:textSize="18sp"
+        android:textColor="@color/black_100"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:orientation="vertical"
+        android:background="@drawable/shape_wordbox">
+
+        <TextView
+            android:id="@+id/flashcard_word_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/notosans_bold"
+            android:textSize="24sp"
+            android:text="단어"
+            android:textColor="@color/black_100"
+            android:layout_gravity="center"
+            android:layout_marginTop="120dp" />
+
+
+        <SlidingDrawer
+            android:content="@+id/flashcard_meaning_tv"
+            android:handle="@+id/flashcard_handle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/flashcard_handle"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@color/purple_100"
+                android:src="@drawable/ic_doubleup"/>
+
+            <!--<Button
+                android:id="@+id/flashcard_handle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_flashcard_btn_box"
+                android:backgroundTint="@color/purple_100"
+                android:text="생각이 안나면 끌어 올려 답을 확인하세요!"
+                android:textColor="@color/white"
+                android:fontFamily="@font/notosans_regular"
+                android:textSize="14sp" />-->
+
+            <TextView
+                android:id="@+id/flashcard_meaning_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notosans_medium"
+                android:textColor="@color/black_100"
+                android:textSize="16sp"
+                android:text="뜻"
+                android:gravity="center"
+                android:background="@color/purple_100" />
+        </SlidingDrawer>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="40dp">
+
+        <Button
+            android:id="@+id/flashcard_incorrect_btn"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_gravity="center"
+            android:background="@drawable/shape_wordbox"
+            android:backgroundTint="@color/black_40"
+            android:layout_weight="1"
+            android:text="모르는 단어에요"
+            android:textSize="14sp"
+            android:textColor="@color/black_100"
+            android:fontFamily="@font/notosans_bold"/>
+
+        <Button
+            android:id="@+id/flashcard_correct_btn"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_gravity="center"
+            android:background="@drawable/shape_wordbox"
+            android:backgroundTint="@color/purple_100"
+            android:layout_weight="1"
+            android:text="아는 단어에요!"
+            android:textSize="14sp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/notosans_bold"
+            android:layout_marginStart="16dp" />
+    </LinearLayout>
+
+</LinearLayout>
