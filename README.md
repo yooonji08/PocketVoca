@@ -24,4 +24,4 @@
 
 
 🔍 **Figma prototype link**
-- https://www.figma.com/file/uAKqkeArL2vB64zLEhybR9/%ED%8F%AC%EC%BC%93%EB%B3%B4%EC%B9%B4(term-project)?node-id=0%3A1
+- https://www.figma.com/proto/uAKqkeArL2vB64zLEhybR9/%ED%8F%AC%EC%BC%93%EB%B3%B4%EC%B9%B4(term-project)?node-id=43%3A328&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=43%3A328
