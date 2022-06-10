@@ -115,6 +115,8 @@ public class FlashCardActivity extends AppCompatActivity {
     protected void onRestart() {
         super.onRestart();
 
+        cardIndex += 1; // 인덱스 증가
+        
         // 모든 단어 학습을 완료했다면
         if (cardIndex == wordNum) {
             // 화면 전환
